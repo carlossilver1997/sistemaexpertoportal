@@ -1,3 +1,5 @@
-<p>
-  forward works!
-</p>
+<ul *ngFor="let literal of literales; let idx=index">
+    <li *ngIf="literal.tipo === 'b'">
+        index:{{idx}} - {{literal.descripcion}}
+    </li>
+</ul>
