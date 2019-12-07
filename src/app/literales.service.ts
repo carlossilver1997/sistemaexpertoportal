@@ -1,0 +1,78 @@
+import { Injectable } from '@angular/core';
+import { Literal } from './literal';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class LiteralesService {
+  literales: Literal[] = [
+    {tipo: 'b', atomo: 'A', descripcion: 'El pedal se va al fondo'},
+    {tipo: 'b', atomo: 'B', descripcion: 'El pedal esta duro'},
+    {tipo: 'b', atomo: 'C', descripcion: 'El vehiculo no frena'},
+    {tipo: 'b', atomo: 'D', descripcion: 'Inestabilidad en el motor'},
+    {tipo: 'b', atomo: 'E', descripcion: 'Al frenar genera un ruido molesto'},
+    {tipo: 'b', atomo: 'F', descripcion: 'Demora al frenar un poco más de lo normal'},
+    {tipo: 'b', atomo: 'G', descripcion: 'Los discos o tambores presentan deformidades en las partes que hacen contacto con las balatas'},
+    {tipo: 'b', atomo: 'H', descripcion: 'Las balatas tienen 3mm de vida'},
+    {tipo: 'b', atomo: 'I', descripcion: 'Presenta fuga de líquidos de frenos en el cilindro maestro'},
+    {tipo: 'b', atomo: 'J', descripcion: 'El pedal se siente blando y no frena'},
+    {tipo: 'b', atomo: 'K', descripcion: 'El pedal del clutch no corta las velocidades aun cuando es presionado'},
+    {tipo: 'b', atomo: 'L', descripcion: 'Debajo del vehículo (en el suelo) deja un charco de líquido de frenos'},
+    {tipo: 'b', atomo: 'M', descripcion: 'El nivel de líquido de clutch baja considerablemente'},
+    {tipo: 'b', atomo: 'N', descripcion: 'No permite cambiar de velocidad (la bota)'},
+    {tipo: 'b', atomo: 'O', descripcion: 'A la hora de meter una velocidad la palanca genera un ruido molesto'},
+    {tipo: 'b', atomo: 'P', descripcion: 'Al conducir genera un zumbido en la rueda donde se encuentra el balero dañado'},
+    {tipo: 'b', atomo: 'Q', descripcion: 'Al extraer el balero se puede percibir que los balines están quemados y con falta de grasa'},
+    {tipo: 'b', atomo: 'R', descripcion: 'El pedal de frenar se regresa al presionarlo'},
+    {tipo: 'b', atomo: 'T', descripcion: 'Físicamente los componentes se ven deformes'},
+    {tipo: 'b', atomo: 'U', descripcion: 'Las balatas no generan contacto por completo con los discos o tambores'},
+    {tipo: 'b', atomo: 'V', descripcion: 'El nivel de líquido de frenos baja considerablemente '},
+    {tipo: 'b', atomo: 'W', descripcion: 'En los frenos rastro de líquido de frenos dentro y fuera del tambor'},
+    {tipo: 'b', atomo: 'X', descripcion: 'El vehículo no avanza al colocar la primera velocidad y soltar el pedal del clutch'},
+    {tipo: 'b', atomo: 'Y', descripcion: 'El vehículo vibra en general al ir soltando el pedal del clutch'},
+    {tipo: 'b', atomo: 'Z', descripcion: 'El vehículo avanza despacio después de soltar el pedal del clutch y acelerar a fondo'},
+    {tipo: 'b', atomo: 'AA', descripcion: 'Humo azul'},
+    {tipo: 'b', atomo: 'AB', descripcion: 'Motor inestable'},
+    {tipo: 'b', atomo: 'AC', descripcion: 'Pérdida de potencia'},
+    {tipo: 'b', atomo: 'AD', descripcion: 'Enciende testigo de avería'},
+    {tipo: 'b', atomo: 'AE', descripcion: 'El motor comienza a generar un ruido de golpeteo'},
+    {tipo: 'b', atomo: 'AF', descripcion: 'El agua no circula'},
+    {tipo: 'b', atomo: 'AG', descripcion: 'El vehículo se sobrecalienta'},
+    {tipo: 'b', atomo: 'AH', descripcion: 'Testigo de temperatura encendido'},
+    {tipo: 'b', atomo: 'AI', descripcion: 'Testigo de temperatura encendido'},
+    {tipo: 'b', atomo: 'AJ', descripcion: 'El agua no circula'},
+    {tipo: 'b', atomo: 'AK', descripcion: 'La manguera de enfriamiento de salida conserva alta temperatura'},
+    {tipo: 'b', atomo: 'AL', descripcion: 'La manguera de enfriamiento de entrada conserva baja temperatura'},
+    {tipo: 'b', atomo: 'AM', descripcion: 'El motor demora en aumentar su temperatura correcta'},
+    {tipo: 'b', atomo: 'AN', descripcion: 'El motor no logra liberar presión en el momento adecuado'},
+    {tipo: 'b', atomo: 'AO', descripcion: 'Deja rastro de anticongelante'},
+    {tipo: 'b', atomo: 'AP', descripcion: 'Manguera o tubos dañados (rotos)'},
+    {tipo: 'b', atomo: 'AQ', descripcion: 'Empaque de algún componente fisurado'},
+    {tipo: 'b', atomo: 'AR', descripcion: 'Bajo nivel de agua (anticongelante)'},
+    {tipo: 'b', atomo: 'AS', descripcion: 'El vehículo se sobrecalienta'},
+    {tipo: 'b', atomo: 'AT', descripcion: 'El motor se encuentra inestable (las revoluciones por minuto bajan drásticamente)'},
+    {tipo: 'c', atomo: 'BV', descripcion: 'Cilindro maestro dañado'},
+    {tipo: 'c', atomo: 'BW', descripcion: 'Cilindro esclavo o bomba de clutch dañada (Sustituir)'},
+    {tipo: 'c', atomo: 'BX', descripcion: 'Sincronizadores de transmisión dañados (Sustituir)'},
+    {tipo: 'c', atomo: 'BY', descripcion: 'Balero de rueda dañado (sustituir)'},
+    {tipo: 'c', atomo: 'BZ', descripcion: 'Discos y/o tambores y balatas con deformidades'},
+    {tipo: 'c', atomo: 'CA', descripcion: 'Cilindro de tambor de frenos dañado (sustituir)'},
+    {tipo: 'c', atomo: 'CB', descripcion: 'Transmisión estándar: Desgaste de clutch o clutch quemado (sustituir)'},
+    {tipo: 'c', atomo: 'CC', descripcion: 'Fallo en anillos (sustituir)'},
+    {tipo: 'c', atomo: 'CD', descripcion: 'Falta de presión de aceite'},
+    {tipo: 'c', atomo: 'CE', descripcion: 'Bomba de agua dañada'},
+    {tipo: 'c', atomo: 'CF', descripcion: 'Termostato pegado'},
+    {tipo: 'c', atomo: 'CG', descripcion: 'Fuga de enfriamiento'},
+    {tipo: 'c', atomo: 'CH', descripcion: 'Válvula IAC dañada (sustituir)'},
+    {tipo: 'c', atomo: 'CI', descripcion: 'Inyector dañado'},
+    {tipo: 'c', atomo: 'CJ', descripcion: 'Problema en los ventiladores'},
+    {tipo: 'c', atomo: 'CK', descripcion: 'Motor: Bomba de gasolina dañada (sustituir)'},
+    {tipo: 'c', atomo: 'CL', descripcion: 'Sensor de cigüeñal (sustituir)'},
+    {tipo: 'c', atomo: 'CM', descripcion: 'Bujías dañadas (sustituir)'},
+    {tipo: 'c', atomo: 'CN', descripcion: 'Empaque de cabeza bloque dañado'},
+  ]
+  constructor() { }
+  public mostrarLiterale(): Literal[]{
+    return this.literales;
+  }
+}
