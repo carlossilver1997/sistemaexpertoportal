@@ -1,5 +1,13 @@
 <ul *ngFor="let literal of literales; let idx=index">
-    <li *ngIf="literal.tipo === 'b'">
-        index:{{idx}} - {{literal.descripcion}}
+    <li *ngIf="literal.basica">
+        {{literal.definicion}}
     </li>
 </ul>
+<form [formGroup]="literalesform" (ngSubmit)="submit()">
+    <label formArrayName="literales" *ngFor="let literal of literalesform.controls.literales.controls; let i = index">
+      <input type="checkbox" [formControlName]="i">
+      {{literales[i].definicion}}
+    </label>
+
+    <button>submit</button>
+</form>

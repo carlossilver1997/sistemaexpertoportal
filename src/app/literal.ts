@@ -1,5 +1,7 @@
 export class Literal {
-    tipo: string;
-    atomo: string;
-    descripcion: string;
+    valor: number;
+    nombre: string;
+    definicion: string;
+    basica: boolean;
+    negada: Literal;
 }
