@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Literal } from './literal';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class LiteralesService {
     {valor: 2, negada: null, basica: true, nombre: 'D', definicion: 'Inestabilidad en el motor'},
     {valor: 2, negada: null, basica: true, nombre: 'E', definicion: 'Al frenar genera un ruido molesto'},
     {valor: 2, negada: null, basica: true, nombre: 'F', definicion: 'Demora al frenar un poco más de lo normal'},
-    {valor: 2, negada: null, basica: true, nombre: 'G', definicion: 'Los discos o tambores presentan deformidades en las partes que hacen contacto con las balatas'},
+    {valor: 2, negada: null, basica: true, nombre: 'G', definicion: 'Los discos o tambores presentan deformidades'},
     {valor: 2, negada: null, basica: true, nombre: 'H', definicion: 'Las balatas tienen 3mm de vida'},
     {valor: 2, negada: null, basica: true, nombre: 'I', definicion: 'Presenta fuga de líquidos de frenos en el cilindro maestro'},
     {valor: 2, negada: null, basica: true, nombre: 'J', definicion: 'El pedal se siente blando y no frena'},
@@ -71,49 +72,40 @@ export class LiteralesService {
     {negada: null,valor: 2, basica: false, nombre: 'CM', definicion: 'Bujías dañadas (sustituir)'},
     {negada: null, valor: 2, basica: false, nombre: 'CN', definicion: 'Empaque de cabeza bloque dañado'},
     {negada: null,valor: 2, basica: true, nombre: 'AI', definicion: 'La polea de la bomba está dañada (genera ruidos extraños)'},//Modificado
-{negada: null,valor: 2, basica: true, nombre: 'AV', definicion: 'Se apaga el motor'},//Agregado
+    {negada: null,valor: 2, basica: true, nombre: 'AV', definicion: 'Se apaga el motor'},//Agregado
     {negada: null,valor: 2, basica: true, nombre: 'AW', definicion: 'Mezcla pobre de gasolina'},//Agregado
-    
-
-     {negada: null,valor: 2, basica: true, nombre: 'AX', definicion: 'Falla de cilindro'},//Agregado
+    {negada: null,valor: 2, basica: true, nombre: 'AX', definicion: 'Falla de cilindro'},//Agregado
     {negada: null,valor: 2, basica: true, nombre: 'AY', definicion: 'Pérdida de potencia'},//Agregado
      {negada: null,valor: 2, basica: true, nombre: 'AZ', definicion: 'Excesivo gasto de combustible'},//Agregado
     {negada: null,valor: 2, basica: true, nombre: 'BA', definicion: 'Humo negro en el escape'},//Agregado
-	
-	
-	{negada: null,valor: 2, basica: true, nombre: 'BB', definicion: 'Los ventiladores nunca encienden'},//Agregado
-     {negada: null,valor: 2, basica: true, nombre: 'BC', definicion: 'El motor se sobrecalienta'},//Agregado
+	  {negada: null,valor: 2, basica: true, nombre: 'BB', definicion: 'Los ventiladores nunca encienden'},//Agregado
+    {negada: null,valor: 2, basica: true, nombre: 'BC', definicion: 'El motor se sobrecalienta'},//Agregado
     {negada: null,valor: 2, basica: true, nombre: 'BD', definicion: 'Enciende el testigo de temperatura'},//Agregado
-	
-	
-	{negada: null,valor: 2, basica: true, nombre: 'BE', definicion: 'No enciende el vehículo'},//Agregado
-     {negada: null,valor: 2, basica: true, nombre: 'BF', definicion: 'Baja presión de combustible'},//Agregado
+	  {negada: null,valor: 2, basica: true, nombre: 'BE', definicion: 'No enciende el vehículo'},//Agregado
+    {negada: null,valor: 2, basica: true, nombre: 'BF', definicion: 'Baja presión de combustible'},//Agregado
     {negada: null,valor: 2, basica: true, nombre: 'BG', definicion: 'Pérdida de potencia al conducir'},//Agregado
     {negada: null,valor: 2, basica: true, nombre: 'BH', definicion: 'Se apaga y tarda en volver a encender'},//Agregado
-	
-	{negada: null,valor: 2, basica: true, nombre: 'BI', definicion: 'No enciende el vehículo'},//Agregado
-     {negada: null,valor: 2, basica: true, nombre: 'BJ', definicion: 'Pérdida de potencia'},//Agregado
+	  {negada: null,valor: 2, basica: true, nombre: 'BI', definicion: 'No enciende el vehículo'},//Agregado
+    {negada: null,valor: 2, basica: true, nombre: 'BJ', definicion: 'Pérdida de potencia'},//Agregado
     {negada: null,valor: 2, basica: true, nombre: 'BK', definicion: 'Se registra código de avería'},//Agregado
     {negada: null,valor: 2, basica: true, nombre: 'BL', definicion: 'Problema en el arranque'},//Agregado
-	
-	
-	
-	
-	{negada: null,valor: 2, basica: true, nombre: 'BM', definicion: 'Problema en el arranque'},//Agregado
-     {negada: null,valor: 2, basica: true, nombre: 'BN', definicion: 'Pérdida de potencia'},//Agregado
+	  {negada: null,valor: 2, basica: true, nombre: 'BM', definicion: 'Problema en el arranque'},//Agregado
+    {negada: null,valor: 2, basica: true, nombre: 'BN', definicion: 'Pérdida de potencia'},//Agregado
     {negada: null,valor: 2, basica: true, nombre: 'BO', definicion: 'Aumento del consumo de combustible'},//Agregado
     {negada: null,valor: 2, basica: true, nombre: 'BP', definicion: 'Bujías físicamente desgastadas'},//Agregado
-
     {negada: null,valor: 2, basica: true, nombre: 'BQ', definicion: 'Demora en encender después de un tiempo apagado'},//Agregado
-     {negada: null,valor: 2, basica: true, nombre: 'BR', definicion: 'El escape expide humo blanco o azul'},//Agregado
+    {negada: null,valor: 2, basica: true, nombre: 'BR', definicion: 'El escape expide humo blanco o azul'},//Agregado
     {negada: null,valor: 2, basica: true, nombre: 'BS', definicion: 'Falla en algún cilindro'},//Agregado
     {negada: null,valor: 2, basica: true, nombre: 'BT', definicion: 'Alguna bujía está bañada de aceite o tiene color blanco'},//Agregado
-  {negada: null,valor: 2, basica: true, nombre: 'AU', definicion: 'Problemas de encendido'},//Agregado
-{negada: null,valor: 2, basica: false, nombre: 'CM', definicion: 'Bujías dañadas (sustituir)'},//Agregado
+    {negada: null,valor: 2, basica: true, nombre: 'AU', definicion: 'Problemas de encendido'},//Agregado
+    {negada: null,valor: 2, basica: false, nombre: 'CM', definicion: 'Bujías dañadas (sustituir)'},//Agregado
     {negada: null, valor: 2, basica: false, nombre: 'CN', definicion: 'Empaque de cabeza bloque dañado'}
   ]
   constructor() { }
   public mostrarLiterale(): Literal[]{
     return this.literales;
+  }
+  public enviarFallas(): Observable<any>{
+    return null;
   }
 }

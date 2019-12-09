@@ -12,10 +12,7 @@
 }
 
 .corousel-item {
-    display: flex;
-    justify-content: center;
-    background: white;
-    border: #4c74af solid 3px;
+    background: palevioletred;
     width: 200px;
     height: 250px;
     border-radius: 20px;
@@ -25,7 +22,7 @@
     cursor: pointer;
     transition: 450ms;
     transform-origin: center left;
-    position: inherit;
+    position: relative;
 }
 
 .corousel__item:hover~.corousel-item {
@@ -41,43 +38,21 @@
     opacity: 1;
 }
 
-.fondo {
-    position: relative;
-    z-index: -10;
-    top: 85px;
-    left: 60px;
+.corousel-item__img {
+    width: 200px;
+    height: 250px;
+    object-fit: cover;
 }
 
-.atomo-descrpcion {
-    position: relative;
-    width: 100%;
-    height: 1vh;
-    font-size: 20px !important;
-    white-space: pre-wrap;
-    text-align: center;
-}
-
-.btns {
-    position: relative;
-    z-index: 100;
-    display: flex;
-    justify-content: space-between;
-    margin: 10px;
-}
-
-.fa-car {
-    position: relative;
+.corousel-item__details {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9)0, rgba(0, 0, 0, 0)100);
+    font-size: 10px;
+    opacity: 1;
+    transition: 450ms opacity;
+    padding: 10px;
+    position: absolute;
     top: 0;
     left: 0;
-    color: #4c74af;
-    font-size: 80px;
-    opacity: 0.3;
-}
-
-.fa-plus-circle {
-    color: green;
-}
-
-.fa-minus-circle {
-    color: red;
+    right: 0;
+    bottom: 0;
 }

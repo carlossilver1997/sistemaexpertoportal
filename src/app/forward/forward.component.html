@@ -1,13 +1,20 @@
-<ul *ngFor="let literal of literales; let idx=index">
-    <li *ngIf="literal.basica">
-        {{literal.definicion}}
-    </li>
-</ul>
-<form [formGroup]="literalesform" (ngSubmit)="submit()">
-    <label formArrayName="literales" *ngFor="let literal of literalesform.controls.literales.controls; let i = index">
-      <input type="checkbox" [formControlName]="i">
-      {{literales[i].definicion}}
-    </label>
-
-    <button>submit</button>
-</form>
+<section>
+    <section class="carousel">
+        <div class="carousel__container">
+            <div class="corousel-item" *ngFor="let idx=index; let literal of literales">
+                <div class="corousel-item__details">
+                    <div class="btns">
+                        <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                        <i class="fa fa-minus-circle" aria-hidden="true"></i>
+                    </div>
+                    <div class="fondo">
+                        <i class="fa fa-car" aria-hidden="true"></i>
+                    </div>
+                    <div class="atomo-descrpcion">
+                        {{literal.definicion}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
