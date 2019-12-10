@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Literal } from './literal';
 import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -99,13 +100,17 @@ export class LiteralesService {
     {negada: null,valor: 2, basica: true, nombre: 'BT', definicion: 'Alguna bujía está bañada de aceite o tiene color blanco'},//Agregado
     {negada: null,valor: 2, basica: true, nombre: 'AU', definicion: 'Problemas de encendido'},//Agregado
     {negada: null,valor: 2, basica: false, nombre: 'CM', definicion: 'Bujías dañadas (sustituir)'},//Agregado
-    {negada: null, valor: 2, basica: false, nombre: 'CN', definicion: 'Empaque de cabeza bloque dañado'}
+    {negada: null, valor: 2, basica: false, nombre: 'CN', definicion: 'Empaque de cabeza bloque dañado'},
+    {negada: null,valor: 2, basica: false, nombre: 'CO', definicion: 'Booster dañado(sustituir)'},//Agregado
   ]
-  constructor() { }
+  constructor( private http: HttpClient ) { }
   public mostrarLiterale(): Literal[]{
     return this.literales;
   }
-  public enviarFallas(): Observable<any>{
+  public llenar(literales: Literal[]): Observable<any>{
+    return this.http.post('http://localhost:8080/literal/hechos', literales);
+  }
+  public enviarFallas(literalesSeleccionadas:Literal[]): Observable<any>{
     return null;
   }
 }

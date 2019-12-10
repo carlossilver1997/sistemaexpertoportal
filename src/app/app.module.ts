@@ -5,12 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import {  HttpClientModule } from '@angular/common/http';
 
 import { ForwardComponent } from './forward/forward.component';
 import { LoginComponent } from './login/login.component';
 import { ItemComponent } from './item/item.component';
 import { BackwardComponent } from './backward/backward.component';
-import { ContainerComponent } from './container/container.component';
 import { ExpertoComponent } from './experto/experto.component';
 
 @NgModule({
@@ -20,14 +20,14 @@ import { ExpertoComponent } from './experto/experto.component';
     LoginComponent,
     ItemComponent,
     BackwardComponent,
-    ContainerComponent,
     ExpertoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,11 +1,22 @@
+<input type="button" value="Cargar archivo" (click)="llenar()" *ngIf="false">
 <section>
+    <h1>FORWARD</h1>
+    <div class="alert alert-success" role="alert" *ngIf="agregado">
+        <strong>Agregado!</strong> {{agregado}}
+    </div>
+    <div class="alert alert-warning" role="alert" *ngIf="repetido">
+        <strong>Opción inválida!</strong> {{repetido}}
+    </div>
+    <div class="alert alert-danger" role="alert" *ngIf="error">
+        <strong>Oh snap!</strong> Change a few things up and try submitting again.
+    </div>
     <section class="carousel">
         <div class="carousel__container">
             <div class="corousel-item" *ngFor="let idx=index; let literal of literales">
                 <div class="corousel-item__details">
                     <div class="btns">
-                        <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                        <i class="fa fa-minus-circle" aria-hidden="true"></i>
+                        <i class="fa fa-plus-circle" aria-hidden="true" (click)="clicked(idx)"></i>
+                        <i class="fa fa-minus-circle" aria-hidden="true" (click)="clicked(idx)"></i>
                     </div>
                     <div class="fondo">
                         <i class="fa fa-car" aria-hidden="true"></i>
@@ -17,4 +28,5 @@
             </div>
         </div>
     </section>
+    <input type="button" value="Inferir">
 </section>
