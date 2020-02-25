@@ -1,16 +1,19 @@
-<div class="container-main">
+<div class="alert alert-danger" role="alert" *ngIf="error">
+    <strong>Error!</strong> {{error}}.
+</div>
+<form class="container-main" [formGroup]="myForm">
     <div class="container-login">
         <div class="login-box">
             <h1>Login</h1>
             <div class="textbox">
                 <i class="fa fa-user" aria-hidden="true"></i>
-                <input type="text" name="" id="" placeholder="Username">
+                <input type="text" name="user" id="" placeholder="Username" formControlName="user">
             </div>
             <div class="textbox">
                 <i class="fa fa-lock" aria-hidden="true"></i>
-                <input type="password" name="" id="" placeholder="Password">
+                <input type="password" name="password" id="" placeholder="Password" formControlName="password">
             </div>
-            <input class="btn" type="button" class="btn" value="Sign in">
+            <input class="btn" type="button" class="btn" value="Sign in" (click)="loggin()">
         </div>
     </div>
-</div>
+</form>

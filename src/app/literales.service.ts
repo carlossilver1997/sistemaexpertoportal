@@ -101,7 +101,8 @@ export class LiteralesService {
     {negada: null,valor: 2, basica: true, nombre: 'AU', definicion: 'Problemas de encendido'},//Agregado
     {negada: null,valor: 2, basica: false, nombre: 'CM', definicion: 'Bujías dañadas (sustituir)'},//Agregado
     {negada: null, valor: 2, basica: false, nombre: 'CN', definicion: 'Empaque de cabeza bloque dañado'},
-    {negada: null,valor: 2, basica: false, nombre: 'CO', definicion: 'Booster dañado(sustituir)'},//Agregado
+    {negada: null,valor: 2, basica: false, nombre: 'CO', definicion: 'Booster dañado(sustituir)'},
+    {negada: null,valor: 2, basica: false, nombre: 'CP', definicion: 'Balatas gastadas(sustituir)'}//Agregado
   ]
   constructor( private http: HttpClient ) { }
   public mostrarLiterale(): Literal[]{
@@ -110,7 +111,7 @@ export class LiteralesService {
   public llenar(literales: Literal[]): Observable<any>{
     return this.http.post('http://localhost:8080/literal/hechos', literales);
   }
-  public enviarFallas(literalesSeleccionadas:Literal[]): Observable<any>{
-    return null;
+  public inferir(literalesSeleccionadas:Literal[]): Observable<any>{
+    return this.http.post('http://localhost:8080/literal/forward', literalesSeleccionadas);
   }
 }

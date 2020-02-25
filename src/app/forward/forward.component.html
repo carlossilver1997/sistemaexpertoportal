@@ -8,7 +8,10 @@
         <strong>Opción inválida!</strong> {{repetido}}
     </div>
     <div class="alert alert-danger" role="alert" *ngIf="error">
-        <strong>Oh snap!</strong> Change a few things up and try submitting again.
+        <strong>Error!</strong> {{error}}.
+    </div>
+    <div class="alert alert-primary" role="alert" *ngIf="final">
+        <strong>Resultado!</strong> {{final}}.
     </div>
     <section class="carousel">
         <div class="carousel__container">
@@ -28,5 +31,5 @@
             </div>
         </div>
     </section>
-    <input type="button" value="Inferir">
+    <input class="btn btn-outline-primary ml-5" type="button" value="Inferir" (click)="inferir()">
 </section>
